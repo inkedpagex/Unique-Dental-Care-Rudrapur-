@@ -20,21 +20,56 @@ window.addEventListener('scroll', () => {
 // Gallery Implementation
 const galleryGrid = document.querySelector('.gallery-grid');
 
+// Create lightbox container if it doesn't exist
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+document.body.appendChild(lightbox);
+
+// Gallery Implementation
+const galleryGrid = document.querySelector('.gallery-grid');
+
 // Create gallery items
 const galleryImages = [
     'review/WhatsApp Image 2025-03-16 at 1.34.51 PM.jpeg',
     'review/WhatsApp Image 2025-03-16 at 1.34.52 PM.jpeg',
     'review/WhatsApp Image 2025-03-16 at 1.34.55 PM.jpeg',
     'review/WhatsApp Image 2025-03-16 at 1.34.56 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.57 PM.jpeg'
-'review/WhatsApp Image 2025-03-16 at 1.34.58 PM.jpeg'
-'review/WhatsApp Image 2025-03-16 at 1.34.59 PM.jpeg'
-'review/WhatsApp Image 2025-03-16 at 1.34.60 PM.jpeg'
-'review/WhatsApp Image 2025-03-16 at 1.34.61 PM.jpeg'
-'review/WhatsApp Image 2025-03-16 at 1.34.62 PM.jpeg'
-'review/WhatsApp Image 2025-03-16 at 1.34.63 PM.jpeg'
+    'review/WhatsApp Image 2025-03-16 at 1.34.57 PM.jpeg',
+    'review/WhatsApp Image 2025-03-16 at 1.34.58 PM.jpeg',
+    'review/WhatsApp Image 2025-03-16 at 1.34.59 PM.jpeg',
+    'review/WhatsApp Image 2025-03-16 at 1.34.60 PM.jpeg',
+    'review/WhatsApp Image 2025-03-16 at 1.34.61 PM.jpeg',
+    'review/WhatsApp Image 2025-03-16 at 1.34.62 PM.jpeg',
+    'review/WhatsApp Image 2025-03-16 at 1.34.63 PM.jpeg'
 ];
 
+galleryImages.forEach((imagePath, index) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.setAttribute('data-aos', 'fade-up');
+    item.setAttribute('data-aos-delay', index * 100);
+
+    const img = document.createElement('img');
+    img.src = imagePath;
+    img.alt = 'Dental Care Gallery Image';
+
+    item.appendChild(img);
+    galleryGrid.appendChild(item);
+
+    // Lightbox functionality
+    item.addEventListener('click', () => {
+        lightbox.innerHTML = `
+            <img src="${imagePath}" alt="Dental Care Gallery Image">
+            <span class="lightbox-close">&times;</span>
+        `;
+        lightbox.classList.add('active');
+
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+    });
+});
 galleryImages.forEach((imagePath, index) => {
     const item = document.createElement('div');
     item.className = 'gallery-item';
