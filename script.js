@@ -17,27 +17,21 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Create lightbox container if it doesn't exist
-const lightbox = document.createElement('div');
-lightbox.className = 'lightbox';
-document.body.appendChild(lightbox);
-
 // Gallery Implementation
 const galleryGrid = document.querySelector('.gallery-grid');
 
 // Create gallery items
 const galleryImages = [
-    'review/WhatsApp Image 2025-03-16 at 1.34.51 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.52 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.55 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.56 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.57 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.58 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.59 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.60 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.61 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.62 PM.jpeg',
-    'review/WhatsApp Image 2025-03-16 at 1.34.63 PM.jpeg'
+    'review/gallery-image-01.jpeg',
+    'review/gallery-image-02.jpeg',
+    'review/gallery-image-03.jpeg',
+    'review/gallery-image-04.jpeg',
+    'review/gallery-image-05.jpeg',
+    'review/gallery-image-06.jpeg',
+    'review/gallery-image-07.jpeg',
+    'review/gallery-image-08.jpeg',
+    'review/gallery-image-09.jpeg',
+    'review/gallery-image-10.jpeg'
 ];
 
 galleryImages.forEach((imagePath, index) => {
@@ -45,28 +39,33 @@ galleryImages.forEach((imagePath, index) => {
     item.className = 'gallery-item';
     item.setAttribute('data-aos', 'fade-up');
     item.setAttribute('data-aos-delay', index * 100);
-
+    
     const img = document.createElement('img');
     img.src = imagePath;
-    img.alt = 'Dental Care Gallery Image';
-
+    img.alt = 'Gallery Image';
+    
     item.appendChild(img);
     galleryGrid.appendChild(item);
-
+    
     // Lightbox functionality
     item.addEventListener('click', () => {
         lightbox.innerHTML = `
-            <img src="${imagePath}" alt="Dental Care Gallery Image">
+            <img src="${imagePath}" alt="Gallery Image">
             <span class="lightbox-close">&times;</span>
         `;
         lightbox.classList.add('active');
-
+        
         const closeBtn = lightbox.querySelector('.lightbox-close');
         closeBtn.addEventListener('click', () => {
             lightbox.classList.remove('active');
         });
     });
 });
+
+// Create lightbox container if it doesn't exist
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+document.body.appendChild(lightbox);
 
 // Close lightbox when clicking outside the image
 lightbox.addEventListener('click', (e) => {
@@ -77,26 +76,11 @@ lightbox.addEventListener('click', (e) => {
 
 // Testimonials Implementation
 const testimonials = [
-    {
-        name: 'Priya Sharma',
-        text: 'Outstanding dental care! Dr. Haneef and his team are professional and caring. My smile has never looked better!'
-    },
-    {
-        name: 'Chirag',
-        text: 'The best dental experience I\'ve ever had. The clinic is modern, clean, and the staff is extremely friendly.'
-    },
-    {
-        name: 'Meera Patel',
-        text: 'I\'m so happy with my dental implants! Dr. Haneef is truly skilled and made the whole process comfortable.'
-    },
-    {
-        name: 'Abhay Singh',
-        text: 'Excellent service and very reasonable pricing. The clinic uses modern technology and the results are amazing!'
-    },
-    {
-        name: 'Neha Gupta',
-        text: 'Dr. Haneef explained everything clearly and made me feel at ease. The root canal treatment was painless!'
-    }
+    { name: 'Priya Sharma', text: 'Outstanding service!' },
+    { name: 'Rajesh Kumar', text: 'Best experience ever.' },
+    { name: 'Meera Patel', text: 'Highly recommended!' },
+    { name: 'Amit Singh', text: 'Excellent pricing and quality.' },
+    { name: 'Neha Gupta', text: 'Very professional team.' }
 ];
 
 // Initialize testimonials slider
@@ -129,12 +113,8 @@ const swiper = new Swiper('.testimonials-slider', {
         clickable: true,
     },
     breakpoints: {
-        768: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
     },
 });
 
@@ -144,10 +124,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
@@ -159,7 +136,7 @@ serviceCards.forEach(card => {
         card.style.transform = 'translateY(-10px)';
         card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
     });
-
+    
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
         card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
