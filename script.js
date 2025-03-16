@@ -27,6 +27,12 @@ const galleryImages = [
     'review/WhatsApp Image 2025-03-16 at 1.34.55 PM.jpeg',
     'review/WhatsApp Image 2025-03-16 at 1.34.56 PM.jpeg',
     'review/WhatsApp Image 2025-03-16 at 1.34.57 PM.jpeg'
+'review/WhatsApp Image 2025-03-16 at 1.34.58 PM.jpeg'
+'review/WhatsApp Image 2025-03-16 at 1.34.59 PM.jpeg'
+'review/WhatsApp Image 2025-03-16 at 1.34.60 PM.jpeg'
+'review/WhatsApp Image 2025-03-16 at 1.34.61 PM.jpeg'
+'review/WhatsApp Image 2025-03-16 at 1.34.62 PM.jpeg'
+'review/WhatsApp Image 2025-03-16 at 1.34.63 PM.jpeg'
 ];
 
 galleryImages.forEach((imagePath, index) => {
@@ -76,7 +82,7 @@ const testimonials = [
         text: 'Outstanding dental care! Dr. Haneef and his team are professional and caring. My smile has never looked better!'
     },
     {
-        name: 'Rajesh Kumar',
+        name: 'Chirag',
         text: 'The best dental experience I\'ve ever had. The clinic is modern, clean, and the staff is extremely friendly.'
     },
     {
@@ -84,7 +90,7 @@ const testimonials = [
         text: 'I\'m so happy with my dental implants! Dr. Haneef is truly skilled and made the whole process comfortable.'
     },
     {
-        name: 'Amit Singh',
+        name: 'Abhay Singh',
         text: 'Excellent service and very reasonable pricing. The clinic uses modern technology and the results are amazing!'
     },
     {
