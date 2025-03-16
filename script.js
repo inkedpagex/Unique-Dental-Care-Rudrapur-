@@ -22,16 +22,16 @@ const galleryGrid = document.querySelector('.gallery-grid');
 
 // Create gallery items
 const galleryImages = [
-    'review/gallery-image-01.jpeg',
-    'review/gallery-image-02.jpeg',
-    'review/gallery-image-03.jpeg',
-    'review/gallery-image-04.jpeg',
-    'review/gallery-image-05.jpeg',
-    'review/gallery-image-06.jpeg',
-    'review/gallery-image-07.jpeg',
-    'review/gallery-image-08.jpeg',
-    'review/gallery-image-09.jpeg',
-    'review/gallery-image-10.jpeg'
+    'gallery-image-01.jpeg',
+    'gallery-image-02.jpeg',
+    'gallery-image-03.jpeg',
+    'gallery-image-04.jpeg',
+    'gallery-image-05.jpeg',
+    'gallery-image-06.jpeg',
+    'gallery-image-07.jpeg',
+    'gallery-image-08.jpeg',
+    'gallery-image-09.jpeg',
+    'gallery-image-10.jpeg'
 ];
 
 galleryImages.forEach((imagePath, index) => {
