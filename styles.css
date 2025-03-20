@@ -27,6 +27,8 @@ body {
     background: var(--background);
     transition: var(--transition);
     overflow-x: hidden;
+    position: relative;
+    width: 100%;
 }
 
 /* Header Styles */
