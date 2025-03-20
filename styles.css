@@ -174,7 +174,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, rgba(0, 128, 128, 0.8), rgba(0, 163, 163, 0.8)), url('dental-bg.jpg');
+    background: linear-gradient(135deg, rgba(0, 128, 128, 0.8), rgba(0, 163, 163, 0.8)), url('dental-bg1.jpg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
