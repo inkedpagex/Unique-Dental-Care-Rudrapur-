@@ -145,6 +145,7 @@ body {
         transition: var(--transition);
         z-index: 1000;
         padding: 2rem 0;
+        overflow-x: hidden;
     }
 
     .nav-menu.active {
